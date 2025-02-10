@@ -1,0 +1,8 @@
+/* 针对畅言评论框输入文字颜色 */
+#SOHUCS textarea {
+    color: white !important;
+}
+/* 针对畅言评论内容文字颜色 */
+#SOHUCS .txtcont {
+    color: white !important;
+}
