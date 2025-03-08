@@ -288,10 +288,21 @@
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"wutongxue132","repo":"gitalkcomments","client_id":"Ov23li5DITwZRTOO38fv","client_secret":"a4fc7631a32ff7f1ea3d4dc1aa1904a195f35d2c","admin_user":"wutongxue132","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"cf784ceda3d9cf8b7429b37efbfe51ef"}</script>
-<script src="/js/third-party/comments/gitalk.js"></script>
+
+<script class="next-config" data-name="valine" type="application/json">{"enable":true,"appId":"g9s00va6lLPJ9sj8OTgRGPIC-gzGzoHsz","appKey":"YOKCubtuL2Qiek12ik2AaMW7","serverURLs":"https://g9s00va6.api.lncldglobal.com","placeholder":"欢迎评论！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"lang":null,"visitor":false,"comment_count":true,"recordIP":false,"enableQQ":false,"requiredFields":[],"el":"#valine-comments","path":"/tags/%E7%89%88%E6%9C%AC/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.valine.el)
+    .then(() => NexT.utils.getScript(
+      'https://fastly.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+      { condition: window.Valine }
+    ))
+    .then(() => {
+      new Valine(CONFIG.valine);
+    });
+});
+</script>
 
 </body>
 </html>
